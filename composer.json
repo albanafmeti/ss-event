@@ -1,0 +1,22 @@
+{
+    "name": "noisim/ss-event",
+    "description": "This library provides Server Sent Event for Laravel.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alban Afmeti",
+            "email": "albanafmeti@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "tonyhhyip/sse": "^2.1",
+        "illuminate/support": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+          "Noisim\\SSEvent\\": "src"
+        }
+    }
+}
