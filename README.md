@@ -25,3 +25,40 @@ Finally generate the configuration file running in the console:
 ```
 php artisan vendor:publish --tag=config
 ```
+
+Laravel Controller:
+
+```php
+<?php
+namespace App\Http\Controllers;
+
+use Noisim\SSEvent\SSEvent;
+
+class TestController extends Controller
+{
+    public function test()
+    {
+        $sse = new SSEvent();
+        return $sse->sleepTime(10)->addEvent("event_name", function () {
+            return json_encode(["hello" => "world"]);
+        })->start();
+    }
+}
+```
+
+Route
+```php
+<?php
+
+Route::get('test', 'TestController@test')->name("test");
+```
+
+Client Javascript:
+
+```js
+
+var source = new EventSource('/test');
+source.addEventListener('event_name', function(event) {
+     console.log(event);
+}, false);
+```
