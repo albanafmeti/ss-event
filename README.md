@@ -46,7 +46,7 @@ class TestController extends Controller
 }
 ```
 
-Route
+Laravel Route:
 ```php
 <?php
 
